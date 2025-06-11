@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "module": "NodeNext",
+        "target": "ESNext",
+        "moduleResolution": "NodeNext",
+        "esModuleInterop": true,
+        "checkJs": true,
+        "strictNullChecks": true,
+        "strictBindCallApply": true,
+        "strictBuiltinIteratorReturn": true,
+        "strictFunctionTypes": true,
+        "strictPropertyInitialization": true,
+        "noImplicitAny": false,
+        "noImplicitThis": true,
+        "useUnknownInCatchVariables": true
+    },
+    "exclude": ["node_modules", "**/node_modules/*"]
+}

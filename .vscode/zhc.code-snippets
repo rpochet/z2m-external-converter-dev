@@ -1,0 +1,82 @@
+{
+    "ZHC: Fz.Converter": {
+        "scope": "javascript,typescript",
+        "prefix": ["fz", "from"],
+        "body": [
+            "/** @type{import('zigbee-herdsman-converters/lib/types').Fz.Converter} */",
+            "const $1 = {",
+            "    cluster: \"${2|genBasic,genPowerCfg,genDeviceTempCfg,genIdentify,genGroups,genScenes,genOnOff,genOnOffSwitchCfg,genLevelCtrl,genAlarms,genTime,genRssiLocation,genAnalogInput,genAnalogOutput,genAnalogValue,genBinaryInput,genBinaryOutput,genBinaryValue,genMultistateInput,genMultistateOutput,genMultistateValue,genCommissioning,genOta,genPollCtrl,greenPower,mobileDeviceCfg,neighborCleaning,nearestGateway,closuresShadeCfg,closuresDoorLock,closuresWindowCovering,barrierControl,hvacPumpCfgCtrl,hvacThermostat,hvacFanCtrl,hvacDehumidificationCtrl,hvacUserInterfaceCfg,lightingColorCtrl,lightingBallastCfg,msIlluminanceMeasurement,msIlluminanceLevelSensing,msTemperatureMeasurement,msPressureMeasurement,msFlowMeasurement,msRelativeHumidity,msOccupancySensing,msSoilMoisture,pHMeasurement,msCO2,pm1Measurement,msFormaldehyde,pm10Measurement,pm25Measurement,ssIasZone,ssIasAce,ssIasWd,piGenericTunnel,piBacnetProtocolTunnel,piAnalogInputReg,piAnalogInputExt,piAnalogOutputReg,piAnalogOutputExt,piAnalogValueReg,piAnalogValueExt,piBinaryInputReg,piBinaryInputExt,piBinaryOutputReg,piBinaryOutputExt,piBinaryValueReg,piBinaryValueExt,piMultistateInputReg,piMultistateInputExt,piMultistateOutputReg,piMultistateOutputExt,piMultistateValueReg,piMultistateValueExt,pi11073ProtocolTunnel,piIso7818ProtocolTunnel,piRetailTunnel,seMetering,tunneling,telecommunicationsInformation,telecommunicationsVoiceOverZigbee,telecommunicationsChatting,haApplianceIdentification,haMeterIdentification,haApplianceEventsAlerts,haApplianceStatistics,haElectricalMeasurement,haDiagnostic,touchlink|}\",",
+            "    type: [\"${3|attributeReport,readResponse,raw,commandXYZ|}\"],",
+            "    // options: (definition) => {},",
+            "    convert: async (model, msg, publish, options, meta) => {",
+            "        $4",
+            "    },",
+            "};",
+            "$0"
+        ],
+        "description": "Create a 'fromZigbee' converter"
+    },
+    "ZHC: Tz.Converter": {
+        "scope": "javascript,typescript",
+        "prefix": ["tz", "to"],
+        "body": [
+            "/** @type{import('zigbee-herdsman-converters/lib/types').Tz.Converter} */",
+            "const $1 = {",
+            "    key: [\"$2\"],",
+            "    // options: (definition) => {},",
+            "    // endpoints: [\"\"],",
+            "    convertSet: async (entity, key, value, meta) => {",
+            "        $3",
+            "    },",
+            "    convertGet: async (entity, key, meta) => {",
+            "        $4",
+            "    },",
+            "};",
+            "$0"
+        ],
+        "description": "Create a 'toZigbee' converter"
+    },
+    "ZHC: Modern Definition": {
+        "scope": "javascript,typescript",
+        "prefix": ["mdef", "modern"],
+        "body": [
+            "/** @type{import('zigbee-herdsman-converters/lib/types').DefinitionWithExtend} */",
+            "export default {",
+            "    zigbeeModel: [\"${1:myZigbeeModel}\"],",
+            "    model: \"${2:myModel}\",",
+            "    vendor: \"${3:myVendor}\",",
+            "    description: \"${4:My super device!}\",",
+            "    extend: [$5],",
+            "};",
+            "$0"
+        ],
+        "description": "Create an exported modern definition"
+    },
+    "ZHC: Definition": {
+        "scope": "javascript,typescript",
+        "prefix": ["def"],
+        "body": [
+            "/** @type{import('zigbee-herdsman-converters/lib/types').DefinitionWithExtend} */",
+            "export default {",
+            "    zigbeeModel: [\"${1:myZigbeeModel}\"],",
+            "    model: \"${2:myModel}\",",
+            "    vendor: \"${3:myVendor}\",",
+            "    description: \"${4:My super device!}\",",
+            "    fromZigbee: [$5],",
+            "    toZigbee: [$6],",
+            "    exposes: [$7],",
+            "    configure: async (device, coordinatorEndpoint, definition) => {",
+            "        $8",
+            "    },",
+            "    // meta: {},",
+            "    // ota: true,",
+            "    // onEvent: async (type, data, device, settings, state, meta) => {},",
+            "    endpoint: (device) => ({",
+            "        $9: $10,",
+            "    }),",
+            "};",
+            "$0"
+        ],
+        "description": "Create an exported definition"
+    }
+}
